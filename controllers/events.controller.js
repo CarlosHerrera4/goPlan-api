@@ -27,3 +27,45 @@ module.exports.create = (req, res, next) => {
         })
         .catch(error => next(error));
 }
+
+module.exports.get = (req, res, next) => {
+    console.log("req.params.id: " + req.params.id );
+    Event.find({
+            id: req.params.id
+        })
+        .then(event => {
+            if (!event) {
+                throw createError(404, 'Event not found');
+            } else {
+                res.json(event);
+            }
+        })
+        .catch(error => {
+            next(error);
+        });
+}
+
+module.exports.getPlan = (req, res, next) => {
+    // Promesa de 3 peticiones
+    console.log("getPlan")
+    let cinemaEvents = Event.find({
+        eventType: "cinema-theatre-comedy"
+    })
+        .then(events => {
+            if (!events) {
+                throw createError(404, 'Events not found');
+            }
+            else {
+                // Elemento aleatorio
+                res.json(events)
+            }
+        })
+        .catch(error => {
+            next(error);
+        })  
+        
+    Promise.all([cinemaEvents])
+        .then(events => {
+            console.log("Ha entrado guay!!");
+        })
+}
