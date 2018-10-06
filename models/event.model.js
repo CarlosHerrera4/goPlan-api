@@ -48,9 +48,15 @@ const eventSchema = new mongoose.Schema({
         required: false
     },
     price_info: {
-        currency: String,
-        amount: Number,
-        type: String
+        currency: {
+            type: String
+        },
+        amount: {
+            type: Number
+        },
+        type: {
+            type: String
+        }
     },
     multiple_days: {
         type: Boolean,
@@ -64,11 +70,11 @@ const eventSchema = new mongoose.Schema({
     },
     first_active_session_date: {
         type: Date,
-        required: true
+        required: false
     },
     last_active_session_date: {
         type: Date,
-        required: true
+        required: false
     },
     cover_image: {
         type: String,
