@@ -4,7 +4,7 @@ const createError = require('http-errors');
 
 module.exports.list = (req, res, next) => {
   User.find()
-    .populate({ path: 'posts', select: 'id' })
+    // .populate({ path: 'posts', select: 'id' })
     .then(users => res.json(users))
     .catch(error => next(error));
 }
