@@ -9,7 +9,7 @@ yarn-error.log*
 data
 
 # Seed
-seeds.js
+bin/seeds.js
 
 # Runtime data
 pids
