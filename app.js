@@ -16,6 +16,7 @@ const corsConfig = require('./config/cors.config');
 const usersRouter = require('./routes/users.routes');
 const sessionsRouter = require('./routes/sessions.routes');
 const eventsRouter = require('./routes/events.routes');
+const randomPlan = require('./routes/randomplan.routes');
 
 const app = express();
 
@@ -40,6 +41,7 @@ app.use(passport.session());
 app.use('/users', usersRouter);
 app.use('/sessions', sessionsRouter);
 app.use('/events', eventsRouter);
+app.use('/randomplan', randomPlan);
 
 app.use(function (req, res, next) {
   next(createError(404));

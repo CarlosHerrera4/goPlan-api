@@ -30,9 +30,12 @@ module.exports.create = (req, res, next) => {
 
 module.exports.get = (req, res, next) => {
     console.log("req.params.id: " + req.params.id );
+    console.log("tipo: " + typeof(req.params.id))
+    var value = parseInt(req.params.id)
     Event.find({
             id: req.params.id
         })
+    // Event.findById(req.params.id)
         .then(event => {
             if (!event) {
                 throw createError(404, 'Event not found');
