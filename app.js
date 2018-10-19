@@ -53,6 +53,7 @@ app.use(function (error, req, res, next) {
 
   const data = {}
 
+  
   if (error instanceof mongoose.Error.ValidationError) {
     res.status(400);
     for (field of Object.keys(error.errors)) {
