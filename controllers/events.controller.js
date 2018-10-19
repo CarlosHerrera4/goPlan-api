@@ -72,3 +72,17 @@ module.exports.getPlan = (req, res, next) => {
             console.log("Ha entrado guay!!");
         })
 }
+
+// module.exports.getRandomPlan = (req, res, next) => {
+//    //console.info(req.params)
+//     // let category = req.params;
+//     // res.json("Random Plan: " + category)
+//     // let eventsRandom = Event.find({
+//     //     category: ""
+//     // })
+
+//         Event.find()
+//             .then(events => res.json(events))
+//             .catch(error => next(error));
+
+// }

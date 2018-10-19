@@ -11,6 +11,8 @@ router.post('/', events.create);
 router.get('/plan', events.getPlan);
 router.get('/:id', events.get);
 
+// router.get('/randomplan', events.getRandomPlan);
+
 // router.get('/', secure.isAuthenticated, events.list);
 // router.post('/', secure.isAuthenticated, events.create);
 // router.get('/:id', events.get);
