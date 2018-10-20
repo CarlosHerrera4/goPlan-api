@@ -20,7 +20,7 @@ const userSchema =  new mongoose.Schema({
   preferences: {
     type: Array,
     required: true,
-    default: ["cine", "deporte"]
+    default: ["cine", "deporte", "gastronomía"]
   },
 }, { 
   timestamps: true,
