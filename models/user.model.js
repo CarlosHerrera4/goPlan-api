@@ -13,10 +13,14 @@ const userSchema =  new mongoose.Schema({
     type: String,
     required: true
   },
+  name: {
+    type: String,
+    required: true
+  },
   preferences: {
     type: Array,
     required: true,
-    default: ["Cine"]
+    default: ["cine", "deporte"]
   },
 }, { 
   timestamps: true,
